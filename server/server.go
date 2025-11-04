@@ -48,8 +48,8 @@ func StartWorkerPool() {
 	}
 }
 
-// handleConversion Gin 处理器
-func handleConversion(c *gin.Context) {
+// HandleConversion Gin 处理器
+func HandleConversion(c *gin.Context) {
 	// 只允许 POST
 	if c.Request.Method != http.MethodPost {
 		c.AbortWithStatusJSON(http.StatusMethodNotAllowed, gin.H{
@@ -109,7 +109,7 @@ func handleConversion(c *gin.Context) {
 func NewRouter() *gin.Engine {
 	r := gin.Default()
 
-	r.POST("/api/v1/convert", handleConversion)
+	r.POST("/api/v1/convert", HandleConversion)
 
 	return r
 }
