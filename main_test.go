@@ -4,7 +4,7 @@ package main
 import (
 	"testing"
 
-	"github.com/opensourceways/argus-worker/server"
+	"github.com/opensourceways/argus-worker/pkg/server"
 )
 
 // TestRun 测试 Run 函数

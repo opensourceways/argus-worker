@@ -4,7 +4,7 @@ package main
 import (
 	"log"
 
-	"github.com/opensourceways/argus-worker/server" // 替换为你的实际 module 名称
+	"github.com/opensourceways/argus-worker/pkg/server" // 替换为你的实际 module 名称
 )
 
 // Run 启动应用

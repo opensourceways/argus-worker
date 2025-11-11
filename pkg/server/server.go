@@ -6,9 +6,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/opensourceways/argus-worker/converter" // 替换为你的实际 module 名称
+	// 替换为你的实际 module 名称
 
 	"github.com/gin-gonic/gin"
+	"github.com/opensourceways/argus-worker/pkg/worker"
 )
 
 // ConversionJob 定义任务
@@ -38,7 +39,7 @@ func StartWorkerPool() {
 			log.Printf("Worker %d 启动", workerID)
 			for job := range JobQueue {
 				log.Printf("Worker %d 开始处理任务", workerID)
-				convertedData, err := converter.ConvertWorkflow(job.Payload)
+				convertedData, err := worker.WorkerRun(job.Payload)
 				job.ResultChan <- ConversionResult{
 					Data:  convertedData,
 					Error: err,
